@@ -22,14 +22,27 @@
     <meta property="og:site_name" content="HENDRO AC">
     <meta property="og:locale" content="id_ID">
 
-    <!-- Google Font -->
+    <!-- Google Font: preload + non-blocking stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+              rel="stylesheet">
+    </noscript>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome: preload + non-blocking stylesheet -->
+    <link rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
 
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
@@ -199,6 +212,11 @@
             display: none;
             font-size: 25px;
             cursor: pointer;
+            background: transparent;
+            border: 0;
+            padding: 0;
+            color: inherit;
+            line-height: 1;
         }
 
         /* =========================
@@ -428,7 +446,7 @@
 
         .service-card p {
             font-size: 14px;
-            color: #687891;
+            color: #52627a;
         }
 
         /* =========================
@@ -937,7 +955,10 @@
     <a href="#beranda" class="logo">
 
         <img src="https://i.postimg.cc/kGR843js/47a0d72e-4913-4957-b2fc-332a35143daf.jpg"
-             alt="Logo HENDRO AC">
+             alt="Logo HENDRO AC"
+             width="1024"
+             height="559"
+             decoding="async">
 
         <div class="logo-text">
             <h2>HENDRO AC</h2>
@@ -947,9 +968,14 @@
     </a>
 
 
-    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Buka menu">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+    <button type="button"
+            class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Buka menu"
+            aria-controls="navLinks"
+            aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
 
 
     <ul class="nav-links" id="navLinks">
@@ -1064,9 +1090,12 @@
     <div class="hero-image">
 
         <img
-            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80"
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80"
             alt="Teknisi HENDRO AC sedang melakukan service AC Medan"
+            width="600"
+            height="400"
             fetchpriority="high"
+            decoding="async"
         >
 
         <div class="response-box">
@@ -1390,9 +1419,12 @@
     <div class="why-image">
 
         <img
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=80"
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80"
             alt="Teknisi HENDRO AC profesional melayani perbaikan AC di Medan"
+            width="600"
+            height="400"
             loading="lazy"
+            decoding="async"
         >
 
     </div>
