@@ -914,6 +914,9 @@
         }
 
     </style>
+<style>
+.order-form-section{padding:60px 20px}.order-form-wrap{max-width:760px;margin:auto;background:#fff;border-radius:18px;padding:28px;box-shadow:0 10px 35px rgba(0,0,0,.08)}.order-form-wrap h2{margin:0 0 8px}.order-form-wrap .form-subtitle{margin:0 0 22px}.order-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.order-form-group{display:flex;flex-direction:column;gap:7px}.order-form-group.full{grid-column:1/-1}.order-form-group label{font-weight:600}.order-form-group input,.order-form-group select,.order-form-group textarea{width:100%;box-sizing:border-box;border:1px solid #d9d9d9;border-radius:10px;padding:13px 14px;font:inherit;background:#fff}.order-form-group textarea{min-height:105px;resize:vertical}.order-submit{grid-column:1/-1;border:0;border-radius:10px;padding:14px 18px;font-weight:700;font-size:16px;cursor:pointer}.order-note{margin:12px 0 0;font-size:13px;opacity:.75}@media(max-width:700px){.order-form-grid{grid-template-columns:1fr}.order-form-group.full,.order-submit{grid-column:auto}.order-form-wrap{padding:22px}}
+</style>
 </head>
 
 <body>
@@ -1121,6 +1124,19 @@
      SERVICES
 ========================= -->
 
+<!-- FORM PEMESANAN V3 -->
+<section class="order-form-section" id="pesan-teknisi">
+<div class="order-form-wrap">
+<h2>Form Pesan Teknisi HENDRO AC</h2>
+<p class="form-subtitle">Isi data berikut untuk mengirim permintaan service AC langsung ke WhatsApp HENDRO AC.</p>
+<form id="orderForm"><div class="order-form-grid">
+<div class="order-form-group"><label for="customerName">Nama Anda</label><input type="text" id="customerName" name="customerName" placeholder="Masukkan nama" autocomplete="name" required></div>
+<div class="order-form-group"><label for="customerPhone">No. HP / WhatsApp</label><input type="tel" id="customerPhone" name="customerPhone" placeholder="08xxxxxxxxxx" autocomplete="tel" inputmode="tel" required></div>
+<div class="order-form-group full"><label for="customerAddress">Alamat Lengkap</label><textarea id="customerAddress" name="customerAddress" placeholder="Contoh: Jl. ... Medan / area sekitar" autocomplete="street-address" required></textarea></div>
+<div class="order-form-group full"><label for="serviceType">Pilih Layanan AC</label><select id="serviceType" name="serviceType" required><option value="" selected disabled>Pilih layanan</option><option>Service AC</option><option>Cuci AC</option><option>Isi / Tambah Freon</option><option>Perbaikan AC</option><option>Bongkar &amp; Pasang AC</option><option>Instalasi AC Baru</option></select></div>
+<div class="order-form-group full"><label for="customerNote">Keterangan (opsional)</label><textarea id="customerNote" name="customerNote" placeholder="Contoh: AC tidak dingin, bocor, atau ingin cuci 2 unit"></textarea></div>
+<button type="submit" class="btn order-submit">PESAN TEKNISI SEKARANG</button></div>
+<p class="order-note">Setelah dikirim, WhatsApp akan terbuka dengan format pesan pemesanan yang sudah terisi.</p></form></div></section>
 <section class="services" id="layanan">
 
     <div class="section-title">
@@ -1751,5 +1767,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 </script>
 
 
+<script>document.getElementById("orderForm")?.addEventListener("submit",function(e){e.preventDefault();const n=document.getElementById("customerName").value.trim(),p=document.getElementById("customerPhone").value.trim(),a=document.getElementById("customerAddress").value.trim(),l=document.getElementById("serviceType").value,k=document.getElementById("customerNote").value.trim();const m=`Halo HENDRO AC, saya ingin memesan teknisi.\n\nNama: ${n}\nNo. HP/WA: ${p}\nAlamat: ${a}\nLayanan: ${l}${k?`\nKeterangan: ${k}`:""}\n\nMohon informasi jadwal dan estimasi layanan. Terima kasih.`;window.open("https://wa.me/6285260092376?text="+encodeURIComponent(m),"_blank","noopener,noreferrer")});</script>
 </body>
 </html>
